@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
 import './Post.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Post = ({ post }) => {
+
+    
 
     const { title, id, body } = post
     const postStyle = {
@@ -12,6 +14,16 @@ const Post = ({ post }) => {
         borderRadius: '15px',
         margin: '5px'
     }
+
+    const navigate = useNavigate()
+
+    const handleShowDetail = () => {
+
+        navigate(`/post/${id}`)
+
+    }
+
+
     return (
         <div style={postStyle} className='align' >
 
@@ -25,6 +37,8 @@ const Post = ({ post }) => {
            <div>
 
             <Link to = {`/post/${id}`} ><button style={{color: 'white', backgroundColor:'gray'}}>Post Details</button></Link>
+
+            <button onClick={handleShowDetail} >Show Details</button>
            
            </div>
 

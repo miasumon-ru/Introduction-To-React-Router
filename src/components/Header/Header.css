@@ -1,7 +1,12 @@
 
 nav  {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
+    gap: 10px;
    
+}
+
+nav div a.active {
+    text-decoration: underline;
+    color: gray;
 }
